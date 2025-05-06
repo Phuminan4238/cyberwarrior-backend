@@ -1,0 +1,86 @@
+{
+  "collectionName": "components_member_team_members",
+  "info": {
+    "displayName": "team.member",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "prefix": {
+      "type": "enumeration",
+      "enum": [
+        "mr",
+        "ms"
+      ]
+    },
+    "education": {
+      "type": "enumeration",
+      "enum": [
+        "bachelor",
+        "master"
+      ]
+    },
+    "major": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "studentId": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "studentCert": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "advisorLettor": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "resume": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}
