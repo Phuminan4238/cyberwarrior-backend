@@ -1,0 +1,795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BillPayment Form</title>
+<style type="text/css">
+@media screen, print {
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+}
+
+/*================================== css current page ========================================*/
+@media screen {
+	body {
+		font-family: Arial, Helvetica, Sans-serif, Geneva, Tahoma;
+		font-size: 14px;
+	}
+}
+
+@media print {
+	body {
+		font-family: Arial, Helvetica, Sans-serif, Geneva, Tahoma;
+		font-size: 16px;
+	}
+	#dvprint {
+		display: none;
+	}
+}
+
+h1 {
+	font-size: 22px;
+}
+h2 {
+	font-size: 22px;
+}
+h3 {
+	font-size: 20px;
+}
+strong {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.button {
+	padding:10px;
+	color:#FFF;	
+	width:auto;
+	border-radius:5px;	
+	min-width:200px;
+	text-align:center;
+	height:20px;
+	line-height:16px;
+	cursor:pointer;
+	font-family: "fontface", Arial, Helvetica, Sans-serif, Geneva, Tahoma;
+	font-size:20px;
+	background: rgb(205,19,66);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NkMTM0MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4ZTAzMGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgb(205,19,66) 0%, rgb(142,3,10) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(205,19,66)), color-stop(100%,rgb(142,3,10))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgb(205,19,66) 0%,rgb(142,3,10) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgb(205,19,66) 0%,rgb(142,3,10) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgb(205,19,66) 0%,rgb(142,3,10) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgb(205,19,66) 0%,rgb(142,3,10) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd1342', endColorstr='#8e030a',GradientType=0 ); /* IE6-8 */
+	/*margin: 0 auto 10%;*/
+	margin: 0 auto;
+	width: 200px;
+}
+.button a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.button > img {
+    vertical-align: middle;
+}
+
+
+
+/*================================== page break ========================================*/
+@media all {
+	.page-break	{ display: none; }
+}
+
+@media print {
+	.page-break	{ display: block; page-break-before: always; }
+}
+
+/*==================================== confirmation cash ======================================*/
+@media screen {
+	.main_boxcash {
+		margin: 0 auto;
+		width: 970px;
+		line-height: 1.4;
+		margin-top: 10px;
+	}
+	.div_boxdetailcash {
+		/*border: 2px solid black;*/
+		width: 476px;
+		/*min-height: 265px;*/
+		padding-left: 5px;
+		line-height: 1.8;
+		font-weight: bold;
+	}
+	.head_bgcash {
+		background-color: #99ccff !important;
+		/*background: url("http://www.thaiticketmajor.com/service/bg_headercash.gif");*/
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		border: 1px solid #000000;
+		padding: 3px 0;
+	}
+	.head_bgcash strong {
+		font-size: 16px;
+	}
+}
+@media print {
+	.main_boxcash {
+		margin: 0 auto;
+		width: 970px;
+		line-height: 1.8;
+	}
+	.div_boxdetailcash {
+		/*border: 2px solid black;*/
+		width: 476px;
+		/*min-height: 350px;*/
+		padding-left: 5px;
+		line-height: 1.8;
+		font-weight: bold;
+	}
+	
+	.head_bgcash {
+		background-color: #99ccff !important;
+		/*background: url("http://www.thaiticketmajor.com/service/bg_headercash.gif");*/
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		border: 1px solid #000000;
+		padding: 3px 0;
+	}
+	.head_bgcash strong {
+		font-size: 16px;
+	}
+}
+
+.height_headercash {
+	padding-bottom: 15px;
+}
+.height_headercash img {
+	vertical-align: bottom;
+}
+.height_headercash h1 {
+    display: inline;
+	margin-left: 40px;
+}
+.height_unamecash {
+	padding-bottom: 12px;
+}
+.height_boxdetailcash {
+	border: 1px solid black;
+	padding-bottom: 12px;
+}
+.height_boxdetailcash_td_center {
+    text-align: center;
+}
+.height_boxdetailcash_center {
+    text-align: center;
+    padding: 10px;
+}
+.height_boxdetailcash_padding {
+    padding: 5px;
+    padding-left: 10px;
+}
+.height_dateexpirecash {
+	padding-top: 10px;
+	padding-bottom: 25px;
+	padding-right: 5px;
+}
+.height_receiveconcash {
+	padding-bottom: 10px;
+	padding-top: 3px;
+}
+
+.text_width1cash {
+	margin-left: 5px;
+	width: 400px;	
+}
+.text_width2cash {
+	/*width: 98%;*/
+}
+.dotted {
+	background-color: #ffffff;
+	height: 1px;
+	width: 90%;
+	border-top: 2px dashed black;
+}
+
+/*================================== billpayment form ========================================*/
+@media screen {
+	.main_box {
+		margin: 0 auto;
+		width: 970px;
+		line-height: 2.5;
+	}
+    .div_boxdetail {
+        float: left;
+        border: 1px solid black;
+        width: 478px;
+        min-height: 280px;
+        padding-left: 5px;
+        min-height: 374px;
+    }
+	.div_boxdetail_cashier {
+		float: left;
+		border: 1px solid black;
+		width: 478px;
+		min-height: 350px;
+		padding-left: 5px;
+	}
+}
+@media print {
+	.main_box {
+		margin: 0 auto;
+		width: 970px;
+		line-height: 2;
+	}
+    .div_boxdetail {
+        float: left;
+        border: 1px solid black;
+        width: 478px;
+        min-height: 280px;
+        padding-left: 5px;
+        min-height: 335px;
+    }
+	.div_boxdetail_cashier {
+		float: left;
+		border: 1px solid black;
+		width: 478px;
+		min-height: 350px;
+		padding-left: 5px;
+	}
+}
+
+.height_header {
+	padding-bottom: 15px;
+}
+.height_header img {
+	vertical-align: top;
+}
+.height_header h1 {
+    display: inline;
+	margin-left: 40px;
+}
+.height_uname {
+	padding-bottom: 12px;
+}
+.height_boxdetail {
+	padding-bottom: 12px;
+}
+.height_dateexpire {
+	padding-bottom: 10px;
+}
+
+.div_expirelabel {
+	width: 470px;
+	text-align: right;
+}
+.div_expiredata {
+    width: 400px;
+}
+.div_barcode {
+	border: 1px solid black;
+	line-height: 1.5;
+}
+.div_barcode img {
+    /*width: 30%;*/
+    vertical-align: middle;
+}
+
+.box_digit {
+	border: 1px solid black;
+}
+.box_digit td {
+	border: 1px solid black;
+	text-align: center;
+	font-weight: bold;
+}
+.text_red {
+	color: red;
+}
+.text_size16 {
+	font-size: 16px;
+}
+.text_size18 {
+	font-size: 18px;
+}
+.text_size20 {
+	font-size: 20px;
+}
+.text_box {
+	border: 2px solid red;
+}
+.text_width1 {
+	width: 350px;
+}
+.text_boxheight {
+    font-size: 16px;
+    margin: 0 auto;
+    padding-left: 5px;
+	font-weight: bold;
+	min-height: 30px;
+}
+.head_table {
+	border: 1px solid black;
+	background-color: #99ccff;
+	line-height: 2;
+}
+.head_table .sub1 {
+	width: 600px;
+	text-align: right;
+}
+.head_table .sub2 {
+	padding-right: 5px;
+	text-align: right;
+}
+.head_border {
+	border: 1px solid;
+}
+.foot_table {
+    border: 1px solid black;
+	line-height: 2;
+}
+.foot_table .sub1 {
+	width: 700px;
+	padding-left: 5px;
+	border-right: 1px solid #000000;
+}
+.foot_table .sub2 {
+    text-align: right;
+	padding-right: 5px;
+}
+.foot_table span {
+	font-size: 16px;
+	font-weight: bold;
+	margin-right: 5px;
+}
+.clearfix {
+	clear: both;
+}
+.banner-bottom {
+    /*margin: 20px auto 10%;*/
+    margin: 0 auto;
+    width: 970px;
+}
+
+.button{
+ position: relative;
+ z-index: 2;
+}
+.ads-footer{
+ clear: both;
+ margin-top: -65px;
+ float: left;
+ position: relative;
+ margin-left: 120px;
+ margin-bottom: 20px;
+ z-index: 1;
+}
+</style>
+
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+// var_dump($totalTicketAmount);
+if ($_SESSION['VSESSION']['showcode'] == 317) {
+  $pixelTotalAmount = !empty($_SESSION['VSESSION']['totalTicketAmount'])? $_SESSION['VSESSION']['totalTicketAmount']: 0;
+  $pixelTotalAmount = number_format(str_replace(',', '', $pixelTotalAmount), 2, '.', '');
+?>
+  <!-- Facebook Pixel Code  for kamar-->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2841629066071630');
+  fbq ( 'track' , 'Purchase' , { 
+  value : <?php echo $pixelTotalAmount; ?> , 
+  currency : 'THB' });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2841629066071630&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- Facebook Pixel Code for Livenation -->
+  <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '505612213360738');
+      fbq ( 'track' , 'Purchase' , { 
+  value : <?php echo $pixelTotalAmount; ?> , 
+  currency : 'THB' }); 
+    </script>
+  <!-- End Facebook Pixel Code -->
+<?php
+} else {
+?>
+
+<?php include($_SERVER["DOCUMENT_ROOT"]."/static/stat/inc-stat-head.php");?>
+ <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+  </script>
+
+<!--DFP-->
+<script>
+  
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/116117570/TTM_Flowticket', [728, 90], 'div-gpt-ad-1577073583565-0').addService(googletag.pubads()); 
+    googletag.defineSlot('/116117570/TTM_leaderboard_flowticket', [728, 90], 'div-gpt-ad-1523417527737-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<!--END DFP-->
+
+<?php
+}
+?>
+</head>
+<body>
+
+<table class="main_boxcash">
+  <tr>
+	<td colspan="2" align="center" class="height_headercash">
+		<h1>ใบยืนยันรายการสั่งซื้อ</h1> 
+		<img src="http://www.thaiticketmajor.com/service/logo-ttm-tm.gif" width="150" align="right" />
+	</td>
+  </tr>
+  <tr>
+    <td width="600" class="height_unamecash">
+      <strong>&nbsp;&nbsp;&nbsp;ชื่อ</strong> : ภูมินันท์  วาสนาเรืองศุกร์<br>
+          </td>
+    <td align="right"><strong>เบอร์โทร</strong> : 0988921314</td>
+  </tr>
+  <tr>
+    <td valign="top" class="height_boxdetailcash">
+		<div class="div_boxdetailcash">
+			<table width="100%">
+			  <tr>
+				<td style="width: 180px;">รายละเอียดการสั่งซื้อ</td>
+				<td colspan="2" align="center">
+          <img style="vertical-align: text-top;" src="http://www.thaiticketmajor.com/ttmbarcodev2/ttmbarcode.php?code=1537348" />&nbsp;
+        </td>
+				</tr>
+			  <tr>
+				<td>หมายเลขการสั่งซื้อ</td>
+        <td colspan="2">
+          15373482010030665        </td>
+				</tr>
+			  <tr>
+				<td>วันที่สั่งซื้อ</td>
+				<td>05 Apr 2025</td>
+				<td>เวลา 16:02</td>
+				</tr>
+			  <tr>
+				<td>ชื่อรายการที่ซื้อ</td>
+				<td colspan="2">2025 GOT7 CONCERT < NESTFEST > in BANGKOK</td>
+				</tr>
+			  <tr>
+				<td>สถานที่</td>
+				<td colspan="2">Rajamangala National Stadium, Huamark</td>
+				</tr>
+
+        			  <tr>
+				<td>วันที่แสดง</td>
+				<td>03 May 2025</td>
+				<td>เวลา 19:00</td>
+				</tr>
+        
+        			  <tr>
+				<td>โซน</td>
+				<td>SR(G)</td>
+				<td>&nbsp;</td>
+				</tr>
+			  <tr>
+				<td>เลขที่นั่ง</td>
+				<td>ไม่ระบุที่นั่ง / non-fixed seats or standing</td>
+				<td>&nbsp;</td>
+				</tr>
+        			</table>
+		</div>
+    </td>
+	<td valign="top" class="height_boxdetailcash">
+		<div class="div_boxdetailcash">
+			<table width="100%">
+			  <tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			  </tr>
+			  <tr>
+				<td>ราคา</td>
+				<td>6,920.00 บาท</td>
+			  </tr>
+			  <tr>
+				<td>จำนวนบัตร</td>
+				<td>2 ใบ</td>
+			  </tr>
+			  <tr>
+				<td>ค่าบริการ</td>
+				<td>130.0                        บาท</td>
+			  </tr>
+			  <tr>
+				<td>ค่าประกัน Ticket Protect (7%)</td>
+				<td>970.0                        บาท</td>
+			  </tr>
+			  <tr>
+				<td>ค่าจัดส่ง</td>
+				<td>0.0                          บาท</td>
+			  </tr>
+			  <tr>
+				<td>รวมจำนวนเงิน</td>
+				<td>14,940.00 บาท</td>
+			  </tr>
+			  <tr>
+				<td colspan="2">(จำนวนเงินนี้ยังไม่รวมค่าบริการรับชำระของผู้รับชำระ)</td>
+			  </tr>
+			</table>
+		</div>
+	</td>
+  </tr>
+
+  <tr>
+    <td align="center" colspan="2" class="height_receiveconcash">
+	 	<!--<div style="position: relative;">
+		<img src="http://www.thaiticketmajor.com/service/bg_headercash.gif" style="width: 100px; height: 100px;" />
+		<div style="position: absolute; top: 0px; left: 0px;">
+		Hello, world.
+		</div>
+  </div>-->
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+    
+        
+        
+        
+        
+    
+      	</td>
+  </tr>
+
+    <tr>
+    <td colspan="2" align="center"><div class="head_bgcash"><strong>ระยะเวลาการรับบัตร</strong></div></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2"><table width="100%" align="left">
+      <tr>
+        <td><strong>กำหนดการรับบัตร</strong></td>
+        <td><div class="text_box text_red text_width2cash text_boxheight">5-27 เมษายน 2568 หลังจากนั้นรับบัตรที่หน้างานในวันแสดง / April 5-27, 2025 or collecting the ticket at venue on the event day.</div></td>
+        </tr>
+      
+      <tr>
+        <td colspan="2">
+          <strong><u>เลือกรับบัตรด้วยตนเอง</u></strong><div align="justify">จุดจำหน่ายบัตร 11 สาขาหลัก ที่สามารถรับบัตรได้ มีเฉพาะในกรุงเทพฯ ดังนี้<br />
+          เซ็นทรัล ปิ่นเกล้า ชั้น3, เซ็นทรัลบางนา ชั้น1, พารากอน ชั้น5, เอสพลานาด รัชดาภิเษก ชั้น4, เมเจอร์ รังสิต ชั้น2, <br />
+    เมเจอร์ รัชโยธิน ชั้น3, มาลีนนท์ ชั้น 27, สยาม สแควร์วัน ชั้น7, สามย่าน มิตรทาวน์ ชั้น 3, เซ็นทรัล ชิดลม ชั้น 2, เซ็นทรัล ลาดพร้าว ชั้น 3</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><strong><u>เลือกจัดส่งบัตรทางไปรษณีย์</u></strong><br />
+  &bull;	เริ่มจัดส่งบัตรทางไปรษณีย์  ตามกำหนดการรับบัตรที่แจ้งไว้ด้านบน<br />
+  &bull;	กรณีไปรษณีย์ตีกลับเนื่องจากเหตุผลใดก็ตาม ลูกค้าต้องรับบัตรที่หน้างานในวันแสดง</td>
+      </tr>
+      
+    </table></td>
+  </tr>
+      <tr>
+    <td colspan="2" align="center"><div class="head_bgcash"><strong>เอกสารการรับบัตร สำหรับลูกค้าที่ชำระด้วย เงินสด</strong></div></td>
+  </tr>
+  <tr>
+    <td colspan="2"><table width="100%" align="left">
+      <tr>
+        <td><strong><u>กรณีผู้ที่ทำรายการสั่งซื้อไปรับบัตรด้วยตนเอง</u></strong><br />
+          1.  แสดงใบยืนยันรายการสั่งซื้อ จากไทยทิคเก็ตเมเจอร์<br />
+          2.  แสดงใบเสร็จรับเงิน (หากชำระด้วย K PLUS หรือ Truemoney Wallet แสดงประวัติการชำระเงินใน Application บนโทรศัพท์มือถือ)<br />
+          3.  แสดงบัตรประชาชน ของผู้ที่ทำรายการสั่งซื้อ</td>
+      </tr>
+      <tr>
+        <td><strong><u>กรณีของผู้ที่ทำรายการสั่งซื้อไม่ได้ไปรับบัตรด้วยตนเอง ต้องเตรียมเอกสารดังต่อไปนี้</u></strong><br />
+          1.  แสดงใบยืนยันรายการสั่งซื้อ จากไทยทิคเก็ตเมเจอร์<br />
+          2.  แสดงใบเสร็จรับเงิน (หากชำระด้วย K PLUS หรือ Truemoney Wallet แสดงประวัติการชำระเงินใน Application บนโทรศัพท์มือถือ)<br />
+          3.  สำเนาบัตรประชาชนของ เจ้าของ  LOGIN ผู้ที่ทำรายการสั่งซื้อ พร้อมเซ็นต์สำเนา  (เจ้าหน้าทีจะเก็บเอกสารนี้ไว้)<br />
+          4.  แสดงบัตรประชาชนของผู้มาบัตรแทน</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><div class="head_bgcash"><strong>เงื่อนไข</strong></div></td>
+  </tr>
+  <tr>
+    <td colspan="2">1.  ถ้าการแสดงเลื่อน,ยกเลิก ท่านต้องนำบัตรคืนที่ 11 สาขาหลัก ภายในวันที่กำหนด โดยจะได้รับเงินคืนเข้าบัญชีธนาคารภายใน 2 สัปดาห์<br />
+      2.  บัตร,ใบเสร็จสูญหาย ซึ่งเป็นบัตรระบุที่นั่ง กรุณาแสดงใบแจ้งความพร้อมสำเนาบัตรประชาชนเจ้าของบัตรติดต่อที่หน้างาน<br />
+      3. บัตรสูญหาย ซึ่งเป็นบัตรไม่ระบุที่นั่ง หรือ บัตรยืน ทางบริษัทขอสงวนสิทธิ์ไม่ออกบัตรให้ใหม่ในทุกกรณี<br />
+      4. ใบเสร็จสูญหาย ซึ่งเป็นบัตรไม่ระบุที่นั่ง หรือ บัตรยืน กรุณาแสดงใบแจ้งความพร้อมสำเนาบัตรประชาชนเจ้าของบัตรติดต่อที่หน้างาน<br />
+      5. เมื่อทำรายการสั่งซื้อเสร็จสมบูรณ์แล้ว ไม่สามารถเปลี่ยนรอบ, เปลี่ยนที่นั่ง, เปลี่ยนการแสดง หรือ ขอคืนเงิน<br />
+      6. ขอคืน Ticket Protect <a href="https://corporate.thaiticketmajor.com/refund.php#refund-insurance">https://corporate.thaiticketmajor.com/refund.php#refund-insurance</a></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">&nbsp;</td>
+  </tr>
+  </table>
+<br /><br />
+
+
+<!-- Start Truehit script -->
+<script language="JavaScript" src="/js/getTruehitsName.js?v=1.4"></script>
+<script type="text/javascript"> __th_page=getTruehitsName();</script>
+<SCRIPT type="text/javascript" src="http://hits.truehits.in.th/data/q0027437.js"></SCRIPT>
+<!-- End Truehit script -->
+<!-- Start of Google Analytics script -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2666540-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End of Google Analytics script -->
+<!-- Advenue DMP Container - Thai Ticket Major -->
+<script type="text/javascript" charset="UTF-8">(function(w,d,s,i,c){var f=d.createElement(s);f.type="text/javascript";f.async=true;f.src=("https:"==d.location.protocol? "https://ssl-avd.innity.net":"http://avd.innity.net")+"/"+i+"/container_"+c+".js";var g=d.getElementsByTagName(s)[0];g.parentNode.insertBefore(f, g);})(window, document, "script", "238", "57bd70251c51b182461b5273");</script>
+<!-- End Advenue DMP Container -->
+     <!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nyyji');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+<!-- Global site tag (gtag.js) - Google AdWords: 799223363 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-799223363"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'AW-799223363');
+</script>
+<!-- Facebook Pixel Code TTM -->
+ <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '858438044331042');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=858438044331042&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+<div id="dvprint" class="button" style="display: none;">
+	<img src="http://www.thaiticketmajor.com/service/printer.png" width="24" height="24" />
+	<a href="#" id="btn_print" name="btn_print" onclick="window.print()">Print this page</a>
+</div>
+
+<table width="100%" border="0" class="banner-bottom" style="margin-top:25px;">
+  <tr>
+    <td align="center">
+        <div align="center" class="ads-footer">
+	<!-- /116117570/TTM_leaderboard_flowticket -->
+	<div id='div-gpt-ad-1523417527737-0' style='height:90px; width:728px;'>
+	<script>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523417527737-0'); });
+	</script>
+	</div>
+</div>
+    </td>
+  </tr>
+</table>
+<br>
+
+</body>
+</html><script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("dvprint").style.display = 'block';
+	};
+</script>

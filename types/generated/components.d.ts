@@ -7,16 +7,17 @@ export interface MemberTeamMember extends Struct.ComponentSchema {
     displayName: 'team.member';
   };
   attributes: {
-    advisorLettor: Schema.Attribute.Media<
+    advisorLetter: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    education: Schema.Attribute.Enumeration<['bachelor', 'master']>;
+    education: Schema.Attribute.Enumeration<['bachelor', 'master', 'doctor']>;
     email: Schema.Attribute.String;
+    github: Schema.Attribute.String;
     major: Schema.Attribute.String;
     name: Schema.Attribute.String;
     organization: Schema.Attribute.String;
     phone: Schema.Attribute.String;
-    prefix: Schema.Attribute.Enumeration<['mr', 'ms']>;
+    prefix: Schema.Attribute.Enumeration<['mr', 'mrs', 'miss']>;
     resume: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     studentCert: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
